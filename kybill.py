@@ -11,8 +11,11 @@ def float_safe(string):
         return ""
 
 
+if len(sys.argv) <= 1:
+    print("enter full path to xml file, add '-d' for detailed expense")
+    sys.exit(1)
+
 file = sys.argv[1]
-# tree = ET.parse("invoice_85751556_20230502030638.xml")
 tree = ET.parse(file)
 root = tree.getroot()
 wb = Workbook()
