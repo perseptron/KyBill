@@ -57,6 +57,7 @@ def make_header(work_sheet, head_list, freeze):
         col_letter = cell.column_letter
         work_sheet.column_dimensions[col_letter].width = len(cell.value) + 2
         i = i + 1
+        # freeze title row
     if freeze:
         work_sheet.freeze_panes = "A2"
 
@@ -93,9 +94,16 @@ def write_cells(ws, data):
             t = 0
             for elem in column:
                 try:
-                    ws.cell(row=r+t, column=c, value=float_safe(elem.text))
+                    val = float_safe(elem.text)
                 except AttributeError:
                     continue
+                # ugly
+                if c == 6 and row[6][0].text == 'заборгованiсть':
+                    val = -val
+                if c == 8 and row[8][0].text == 'заборгованiсть':
+                    val = -val
+
+                ws.cell(row=r + t, column=c, value=val)
                 t = t + 1
                 if t > r_max:
                     r_max = t
