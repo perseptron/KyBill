@@ -6,7 +6,7 @@
     <Company>Kyivstar</Company>
     <Created>2023-05-02T05:40:26.000+03:00</Created>
   </Batch>
-  <Invoice Language="UK" PrintHouseCode="QVANTEL" InvoiceGroup="B2B" XMLCopyFile="invoice_85751556_20230502030638.xml" SkipPrintingDiffInv="no" Layout="">
+  <Invoice Language="UK" PrintHouseCode="QVANTEL" InvoiceGroup="B2B" XMLCopyFile="invoice_20230502.xml" SkipPrintingDiffInv="no" Layout="">
     <Header>
       <MainTitle>Рахунок</MainTitle>
       <InvoiceID Header="РАХУНОК No">200117328829</InvoiceID>
@@ -150,7 +150,7 @@
     <Company>Kyivstar</Company>
     <Created>2023-05-02T05:41:00.000+03:00</Created>
   </Batch>
-  <Invoice Language="UK" PrintHouseCode="QVANTEL" InvoiceGroup="B2B" XMLCopyFile="invoice_85753302_20230502030638.xml" SkipPrintingDiffInv="no" Layout="">
+  <Invoice Language="UK" PrintHouseCode="QVANTEL" InvoiceGroup="B2B" XMLCopyFile="invoice_20230502.xml" SkipPrintingDiffInv="no" Layout="">
     <Header>
       <MainTitle>Рахунок</MainTitle>
       <InvoiceID Header="РАХУНОК No">200117330575</InvoiceID>
