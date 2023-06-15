@@ -1,99 +1,105 @@
 import sys
 import xml.etree.ElementTree as ET
 from openpyxl import Workbook
+from openpyxl.styles import Font
 from pathlib import Path
+
+
+def main():
+    if len(sys.argv) <= 1:
+        print("enter full path to xml file, add '-d' for detailed expense")
+        sys.exit(1)
+
+    fields = {'Ос. номер': 'Invoice/Customer/BillingAccount',
+              'Номер тел.': 'Invoice/Customer/CustomerPhone',
+              'Тарифний план': 'Invoice/Contract/ContractDetail/ContractType',
+              'Початкова дата': 'Invoice/Header/BillingPeriod/BeginDate',
+              'Кінцева дата': 'Invoice/Header/BillingPeriod/EndDate',
+              'Баланс поч.': 'Invoice/InvoiceAmount/AmountDetail/BalBeginMonth',
+              'знак балансу': 'Invoice/InvoiceAmount/AmountDetail/BalBeginMonthText',
+              'Баланс кін.': 'Invoice/InvoiceAmount/AmountDetail/BalEndMonth',
+              'знак балансу.': 'Invoice/InvoiceAmount/AmountDetail/BalBeginEndText',
+              'Поповн.': 'Invoice/InvoiceAmount/AmountDetail/Payments/PaymentsBank',
+              'Рекоменд': 'Invoice/InvoiceAmount/AmountDetail/RecommendedPayment',
+              'Деталізація': 'Invoice/Summary/SummaryRow/RowDetail//Text',
+              'Витрати': 'Invoice/Summary/SummaryRow/RowDetail//AmountExclTax',
+              'ПДВ': 'Invoice/Summary/SummaryRow/RowDetail/TaxAmount[@Type="VAT"]',
+              'Пенс. фонд': 'Invoice/Summary/SummaryRow/RowDetail/TaxAmount[@Type="PF"]',
+              'Разом': 'Invoice/Summary/SummaryRow/RowDetail/Amount'
+              }
+
+    xml_file = sys.argv[1]
+    wb = Workbook()
+    ws = wb.active
+    make_header(ws, list(fields.keys()), True)
+    hide_col(ws, 'G')
+    hide_col(ws, 'I')
+    data = parse_file(xml_file, fields.values())
+    write_cells(ws, data)
+    wb.save(Path(xml_file).stem + '.xlsx')
 
 
 def float_safe(string):
     try:
         return float(string)
-    except TypeError:
-        return ""
+    except (TypeError, ValueError):
+        return string
 
 
-if len(sys.argv) <= 1:
-    print("enter full path to xml file, add '-d' for detailed expense")
-    sys.exit(1)
-
-file = sys.argv[1]
-tree = ET.parse(file)
-root = tree.getroot()
-wb = Workbook()
-ws = wb.active
-ws.freeze_panes = "A2"
-ws['A1'] = "Особ. номер"
-ws['B1'] = "Номер"
-ws['C1'] = "Тариф"
-ws['D1'] = "Дата початку"
-ws['E1'] = "Дата закінчення"
-ws['F1'] = "Баланс поч."
-ws['G1'] = "Баланс кін."
-ws['H1'] = "Надходження"
-ws['I1'] = "Рекоменд."
-ws['J1'] = "Сума"
-ws['K1'] = "ПДВ"
-ws['L1'] = "Пенс. фонд"
-ws['M1'] = "Разом"
-
-i = 2
-
-for account in root:
-    begin_date = account.findtext('.//{}'.format('BeginDate'))
-    end_date = account.findtext('.//{}'.format('EndDate'))
-    customer_phone = account.findtext('.//{}'.format('CustomerPhone'))
-    billing_account = account.findtext('.//{}'.format('BillingAccount'))
-    amount_exclTax = account.findtext('.//{}'.format('AmountExclTax'))
-    tax_amount_vat = account.findtext('.//{}[@{}="{}"]'.format('TaxAmount', 'Type', 'VAT'))
-    tax_amount_pf = account.findtext('.//{}[@{}="{}"]'.format('TaxAmount', 'Type', 'PF'))
-    amount = account.findtext('.//{}[@{}]'.format('Amount', 'Header'))
-    balance_begin = account.findtext('.//{}'.format('BalBeginMonth'))
-    balance_begin_text = account.findtext('.//{}'.format('BalBeginMonthText'))
-    balance_end = account.findtext('.//{}'.format('BalEndMonth'))
-    balance_end_text = account.findtext('.//{}'.format('BalBeginEndText'))
-    payments_total_amount = account.findtext('.//{}'.format('PaymentsTotalAmount'))
-    recommended_payment = account.findtext('.//{}'.format('RecommendedPayment'))
-    contract_type = account.findtext('.//{}'.format('ContractType'))
-    # payment = account.findtext('.//{}'.format('PaymentsBank'))
-
-    details = account.find('.//{}[@{}="{}"]'.format('Summary', 'Type', 'BIGroup'))
-
-    ws.cell(row=i, column=1).value = billing_account
-    ws.cell(row=i, column=2).value = customer_phone
-    ws.cell(row=i, column=3).value = contract_type
-    ws.cell(row=i, column=4).value = begin_date
-    ws.cell(row=i, column=5).value = end_date
-    if balance_begin_text == "заборгованiсть":
-        balance_begin = 0 - float_safe(balance_begin)
-    ws.cell(row=i, column=6).value = float_safe(balance_begin)
-    if balance_end_text == "заборгованiсть":
-        balance_end = 0 - float_safe(balance_end)
-    ws.cell(row=i, column=7).value = float_safe(balance_end)
-    ws.cell(row=i, column=8).value = float_safe(payments_total_amount)
-    # ws.cell(row=i, column=13).value = payment
-    ws.cell(row=i, column=9).value = float_safe(recommended_payment)
-
-    ws.cell(row=i, column=10).value = float_safe(amount_exclTax)
-    ws.cell(row=i, column=11).value = float_safe(tax_amount_vat)
-    ws.cell(row=i, column=12).value = float_safe(tax_amount_pf)
-    ws.cell(row=i, column=13).value = float_safe(amount)
-
-    if len(sys.argv) > 2 and sys.argv[2] == "-d":
-        try:
-            text = details.findall('.//{}'.format('Text'))
-            amount_exclTax = details.findall('.//{}'.format('AmountExclTax'))
-        except AttributeError:
-            text = []
-            amount_exclTax = []
-        j = 0
-        while j < len(text):
-            i = i + 1
-
-            ws.cell(row=i, column=5).value = text[j].text
-            ws.cell(row=i, column=10).value = float_safe(amount_exclTax[j].text)
-            j = j + 1
+def make_header(work_sheet, head_list, freeze):
+    i = 1
+    for col in head_list:
+        cell = work_sheet.cell(1, i)
+        cell.value = col
+        # make title bold
+        cell.font = Font(bold=True)
+        # resize column
+        col_letter = cell.column_letter
+        work_sheet.column_dimensions[col_letter].width = len(cell.value) + 2
         i = i + 1
+    if freeze:
+        work_sheet.freeze_panes = "A2"
 
-    i = i + 1
-file = Path(file).stem
 
-wb.save(file + '.xlsx')
+def hide_col(work_sheet, col):
+    column_dimension = work_sheet.column_dimensions[col]
+    column_dimension.hidden = True
+
+
+def parse_file(xml_file, tag_list):
+    tree = ET.parse(xml_file)
+    root = tree.getroot()
+    data = []
+    for account in root:
+        row = []
+        for tag in tag_list:
+            if len(sys.argv) > 2 and sys.argv[2] == '-d':
+                row.append(account.findall(tag))
+            else:
+                row.append([account.find(tag)])
+        data.append(row)
+    return data
+
+
+def write_cells(ws, data):
+    r = 2
+    r_max = 0
+    for row in data:
+        r = r + r_max
+        r_max = 0
+        c = 0
+        for column in row:
+            c = c + 1
+            t = 0
+            for elem in column:
+                try:
+                    ws.cell(row=r+t, column=c, value=float_safe(elem.text))
+                except AttributeError:
+                    continue
+                t = t + 1
+                if t > r_max:
+                    r_max = t
+
+
+if __name__ == '__main__':
+    main()
