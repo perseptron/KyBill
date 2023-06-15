@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by Qvantel Oy -->
+<Array-Bill>
+<InvoiceDocument Document="Invoice" Version="4.0">
+  <Batch>
+    <Company>Kyivstar</Company>
+    <Created>2023-05-02T05:40:26.000+03:00</Created>
+  </Batch>
+  <Invoice Language="UK" PrintHouseCode="QVANTEL" InvoiceGroup="B2B" XMLCopyFile="invoice_85751556_20230502030638.xml" SkipPrintingDiffInv="no" Layout="">
+    <Header>
+      <MainTitle>Рахунок</MainTitle>
+      <InvoiceID Header="РАХУНОК No">200117328829</InvoiceID>
+      <InvoiceDate Header="від">30.04.2023</InvoiceDate>
+      <DueDate Header="Дата відправлення">01.05.2023</DueDate>
+      <BillingPeriod>
+        <BeginDate>01.04.2023 00:00:00</BeginDate>
+        <EndDate>30.04.2023 23:59:59</EndDate>
+      </BillingPeriod>
+      <InvoiceType Name="Scheduled Invoice">1</InvoiceType>
+      <LiveSignature Header="живая подпись">no</LiveSignature>
+      <InvoiceAct Header="счет-акт">no</InvoiceAct>
+      <RBSInvoiceID>85751556</RBSInvoiceID>
+    </Header>
+    <ContactInfo>
+      <CompanyName>ПрАТ &quot;Київстар&quot;</CompanyName>
+      <Address>м. Київ, Україна, 03113, вулиця Дегтярівська, будинок 53</Address>
+      <TaxID>ІПН 216738326059</TaxID>
+      <Phone>тел. 0 800 300 466</Phone>
+    </ContactInfo>
+    <Customer>
+      <CustomerType>Invoice</CustomerType>
+      <Category>COMP</Category>
+      <CustomerID Header="ЕДРПОУ">4514352</CustomerID>
+      <RBSCustomerNumber>234234</RBSCustomerNumber>
+      <CustomerName Header="Абонент:">
+        <FirstName>ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО &apos;SOMECOMPANY&apos;</FirstName>
+        <MiddleName></MiddleName>
+        <LastName>ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО &apos;SOMECOMPANY&apos;</LastName>
+        <FullName>ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО &apos;SOMECOMPANY&apos;</FullName>
+      </CustomerName>
+      <CustomerPhone Header="Aбонентський номер:">0673456789</CustomerPhone>
+      <AgreementNumber Header="Договір: No">1234567</AgreementNumber>
+      <AgreementStartDate Header="від">06.04.2006</AgreementStartDate>
+      <BillingAccount Header="Особовий рахунок абонента:">1234567</BillingAccount>
+      <CustomerAddress>
+        <Address>вулиця street вул.</Address>
+        <ZipCode></ZipCode>
+        <City>місто Львів  Львівський</City>
+        <Region>Львівська область</Region>
+        <Country>Ukraine</Country>
+      </CustomerAddress>
+    </Customer>
+    <PaymentInfo>
+      <BarCode Position="1">03000004400000010145200117328829</BarCode>
+      <PaymentText Position="1">Платіжні реквізити:</PaymentText>
+      <PaymentText Position="2">п/р UA873808050000000026003707654 в АТ &quot;Райффайзен Банк&quot;, м Київ</PaymentText>
+      <PaymentText Position="3">МФО 380805, ЄДРПОУ 21673832</PaymentText>
+      <PaymentText Position="4">п/р UA333510050000026005325079000 в АТ ?УкрСиббанк?, м. Київ</PaymentText>
+      <PaymentText Position="5">МФО 351005, ЄДРПОУ 21673832</PaymentText>
+    </PaymentInfo>
+    <InvoiceText>
+      <Text Type="StatementText">Цей рахунок сформований білінговою системою Оператора є первинним документом який підтверджує надання Оператором послуг Абоненту у відповідному розрахунковому періоді. Рахунок зберігається у Абонента та за необхідності може бути скріплений підписом та печаткою Абонента.</Text>
+      <Text Type="SignatureText" Position="1">Оператор:</Text>
+      <Text Type="SignatureText" Position="2">Пiдпис:</Text>
+      <Text Type="SignatureText" Position="3">М.П.</Text>
+      <Text Type="SignatureText" Position="4">Абонент:</Text>
+      <Text Type="SignatureText" Position="5">Пiдпис:</Text>
+      <Text Type="SignatureText" Position="6">М.П.</Text>
+      <Text Type="Footer" Position="1">Під час заповнення доручення на оплату в графі ?Призначення платежу? слід зазначати: ?Оплата за послуги зв&apos;язку на особовий рахунок № 1894617, абонентський номер 0673538148?. Рахунок підлягає оплаті протягом 5 днів.</Text>
+      <Text Type="Footer" Position="2">Якщо у вас є картка Visa, Master Card або Cirrus/Maestro, ви можете оплатити цей рахунок на сайті pay.kyivstar.ua</Text>
+      <Text Type="Footer" Position="3">Самостійно контролюйте витрати та управляйте послугами мобільного зв&apos;язку за допомогою системи ?Мій Київстар? на сайті www.my.kyivstar.ua</Text>
+      <Text Type="Page">Стор.</Text>
+      <Text Type="Currency">грн</Text>
+      <Text Type="Note">* Вартість послуг рухомого (мобільного) зв&apos;язку вказана з урахуванням ПДВ. Додатково утримано збір до Пенсійного фонду у розмірі 7.5% з вартості послуг без урахування ПДВ. Вартіcть послуг фіксованого телефонного зв&apos;язку вказана з урахуванням ПДВ. </Text>
+      <Text Type="DiffText">Диференційований рахунок</Text>
+      <Text Type="PhoneText">Відомість вартості отриманих послуг  за абонентським номером</Text>
+      <Text Type="CallCodes">S - текстове повідомлення (SMS) P - замовлення/отримання додаткових послуг G - послуга &apos;Прямий номер&apos; М - мультимедійне повідомлення (MMS) F - ередача/прийом факсів D - передача/прийом даних&apos;</Text>
+      <Text Type="CallType">1-вихідний  2 - вхідний 3-переадресований  4-виклик до абонента в роумінгу&apos;</Text>
+      <Text Type="CallDuration">тривалість з&apos;&apos;єднання у секундах&apos;</Text>
+      <Text Type="DetailedInfo">ДЕТАЛІЗОВАНА ІНФОРМАЦІЯ ПО РАХУНКУ №:</Text>
+    </InvoiceText>
+    <Summary Type="InvoiceSection">
+      <SummaryRow>
+        <RowDetail Header="Вартість, грн">
+          <Text>Замовлено та надано послуг рухомого (мобільного) зв&apos;язку за період</Text>
+          <AmountExclTax Header="Разом (без податків):">78.59</AmountExclTax>
+          <TaxAmount Type="VAT" Header="Податок на додану вартість (20% ПДВ)">15.72</TaxAmount>
+          <TaxAmount Type="PF" Header="Збір до Пенсійного фонду (7.5% ПФ)">5.89</TaxAmount>
+          <Amount Header="Разом (зі збором до Пенсійного фонду та з ПДВ):">100.20</Amount>
+          <Summary Type="BIGroup">
+            <SummaryRow>
+              <RowDetail>
+                <Text>Послуги SMS та MMS (вихідні текстові та мультимедійні повідомлення )</Text>
+                <Id>12</Id>
+                <AmountExclTax>2.35</AmountExclTax>
+                <Amount>3.00</Amount>
+              </RowDetail>
+              <RowDetail>
+                <Text>Щомісячна абонентна плата</Text>
+                <Id>1</Id>
+                <AmountExclTax>76.24</AmountExclTax>
+                <Amount>97.20</Amount>
+              </RowDetail>
+            </SummaryRow>
+          </Summary>
+        </RowDetail>
+      </SummaryRow>
+    </Summary>
+    <InvoiceAmount>
+      <AmountDetail Type="Main" Header="Замовлено та надано послуг Mobile за перiод">
+        <BalBeginMonth Header="Станом на ">101.45</BalBeginMonth>
+        <BalBeginMonthText>залишок</BalBeginMonthText>
+        <BalEndMonth Header="Станом на ">1.25</BalEndMonth>
+        <BalBeginEndText>залишок</BalBeginEndText>
+        <TotalAmount Header="Разом замовлено та надано послуг за період на суму">100.20</TotalAmount>
+        <PaymentsTotalAmount Header="Надходження коштів  на особовий рахунок">0.00</PaymentsTotalAmount>
+        <RecommendedPayment Header="Сума рекомендованого авансового платежу">100.00</RecommendedPayment>
+        <TaxAmount Type="VAT" Header="Податок на додану вартість (20% ПДВ)">15.72</TaxAmount>
+        <TaxAmount Type="PF" Header="Збір до Пенсійного фонду (7.5% ПФ)">5.89</TaxAmount>
+        <Currency>UAH</Currency>
+        <Payments Header="Деталізація платежів за типами:">
+          <PaymentsInitial Header="Початковий платіж(дилерам), грн">0.00</PaymentsInitial>
+          <PaymentsBank Header="Платежі через банк, грн">0.00</PaymentsBank>
+          <PaymentsScratch Header="Скретч-картки та інші платежі, грн">0.00</PaymentsScratch>
+          <PaymentsOther Header="Переказ коштів та інші коригування, грн">0.00</PaymentsOther>
+          <PaymentsTotal Header="Разом, грн">0.00</PaymentsTotal>
+        </Payments>
+      </AmountDetail>
+    </InvoiceAmount>
+    <Contract>
+      <InvoiceID Header="Додаток до рахунку No ">23423423412</InvoiceID>
+      <ContractDetail>
+        <ContractID Header="Відомість вартості отриманих послуг за абонентським номером ">0673456789</ContractID>
+        <ContractType Header="" Name="VASH Simple">B2BVASHSIMPLE</ContractType>
+        <ContractName Header="Абонент:">
+          <FullName> Anonymous</FullName>
+        </ContractName>
+        <SubInvoiceAmount>
+          <AmountDetail Type="Sub">
+            <AmountExclTax Header="Разом:">100.20</AmountExclTax>
+            <TotalAmount Header="Разом замовлено та надано послуг за період на суму">100.20</TotalAmount>
+          </AmountDetail>
+        </SubInvoiceAmount>
+      </ContractDetail>
+    </Contract>
+  </Invoice>
+</InvoiceDocument>
+<InvoiceDocument Document="Invoice" Version="4.0">
+  <Batch>
+    <Company>Kyivstar</Company>
+    <Created>2023-05-02T05:41:00.000+03:00</Created>
+  </Batch>
+  <Invoice Language="UK" PrintHouseCode="QVANTEL" InvoiceGroup="B2B" XMLCopyFile="invoice_85753302_20230502030638.xml" SkipPrintingDiffInv="no" Layout="">
+    <Header>
+      <MainTitle>Рахунок</MainTitle>
+      <InvoiceID Header="РАХУНОК No">200117330575</InvoiceID>
+      <InvoiceDate Header="від">30.04.2023</InvoiceDate>
+      <DueDate Header="Дата відправлення">01.05.2023</DueDate>
+      <BillingPeriod>
+        <BeginDate>01.04.2023 00:00:00</BeginDate>
+        <EndDate>30.04.2023 23:59:59</EndDate>
+      </BillingPeriod>
+      <InvoiceType Name="Scheduled Invoice">1</InvoiceType>
+      <LiveSignature Header="живая подпись">no</LiveSignature>
+      <InvoiceAct Header="счет-акт">no</InvoiceAct>
+      <RBSInvoiceID>85753302</RBSInvoiceID>
+    </Header>
+    <ContactInfo>
+      <CompanyName>ПрАТ &quot;Київстар&quot;</CompanyName>
+      <Address>м. Київ, Україна, 03113, вулиця Дегтярівська, будинок 53</Address>
+      <TaxID>ІПН 216738326059</TaxID>
+      <Phone>тел. 0 800 300 466</Phone>
+    </ContactInfo>
+    <Customer>
+      <CustomerType>Invoice</CustomerType>
+      <Category>COMP</Category>
+      <CustomerID Header="ЕДРПОУ">00214244</CustomerID>
+      <RBSCustomerNumber>300642</RBSCustomerNumber>
+      <CustomerName Header="Абонент:">
+        <FirstName>ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО &apos;SOMECOMPANY&apos;</FirstName>
+        <MiddleName></MiddleName>
+        <LastName>ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО &apos;SOMECOMPANY&apos;</LastName>
+        <FullName>ПРИВАТНЕ АКЦІОНЕРНЕ ТОВАРИСТВО &apos;SOMECOMPANY&apos;</FullName>
+      </CustomerName>
+      <CustomerPhone Header="Aбонентський номер:">0674567890</CustomerPhone>
+      <AgreementNumber Header="Договір: No">2234567</AgreementNumber>
+      <AgreementStartDate Header="від">06.04.2006</AgreementStartDate>
+      <BillingAccount Header="Особовий рахунок абонента:">2234567</BillingAccount>
+      <CustomerAddress>
+        <Address>вулиця Street вул.</Address>
+        <ZipCode></ZipCode>
+        <City>місто Львів  Львівський</City>
+        <Region>Львівська область</Region>
+        <Country>Ukraine</Country>
+      </CustomerAddress>
+    </Customer>
+    <PaymentInfo>
+      <BarCode Position="1">03000004400000025222200117330575</BarCode>
+      <PaymentText Position="1">Платіжні реквізити:</PaymentText>
+      <PaymentText Position="2">п/р UA873808050000000026003707654 в АТ &quot;Райффайзен Банк&quot;, м Київ</PaymentText>
+      <PaymentText Position="3">МФО 380805, ЄДРПОУ 21673832</PaymentText>
+      <PaymentText Position="4">п/р UA333510050000026005325079000 в АТ ?УкрСиббанк?, м. Київ</PaymentText>
+      <PaymentText Position="5">МФО 351005, ЄДРПОУ 21673832</PaymentText>
+    </PaymentInfo>
+    <InvoiceText>
+      <Text Type="StatementText">Цей рахунок сформований білінговою системою Оператора є первинним документом який підтверджує надання Оператором послуг Абоненту у відповідному розрахунковому періоді. Рахунок зберігається у Абонента та за необхідності може бути скріплений підписом та печаткою Абонента.</Text>
+      <Text Type="SignatureText" Position="1">Оператор:</Text>
+      <Text Type="SignatureText" Position="2">Пiдпис:</Text>
+      <Text Type="SignatureText" Position="3">М.П.</Text>
+      <Text Type="SignatureText" Position="4">Абонент:</Text>
+      <Text Type="SignatureText" Position="5">Пiдпис:</Text>
+      <Text Type="SignatureText" Position="6">М.П.</Text>
+      <Text Type="Footer" Position="1">Під час заповнення доручення на оплату в графі ?Призначення платежу? слід зазначати: ?Оплата за послуги зв&apos;язку на особовий рахунок № 1894597, абонентський номер 0673538135?. Рахунок підлягає оплаті протягом 5 днів.</Text>
+      <Text Type="Footer" Position="2">Якщо у вас є картка Visa, Master Card або Cirrus/Maestro, ви можете оплатити цей рахунок на сайті pay.kyivstar.ua</Text>
+      <Text Type="Footer" Position="3">Самостійно контролюйте витрати та управляйте послугами мобільного зв&apos;язку за допомогою системи ?Мій Київстар? на сайті www.my.kyivstar.ua</Text>
+      <Text Type="Page">Стор.</Text>
+      <Text Type="Currency">грн</Text>
+      <Text Type="Note">* Вартість послуг рухомого (мобільного) зв&apos;язку вказана з урахуванням ПДВ. Додатково утримано збір до Пенсійного фонду у розмірі 7.5% з вартості послуг без урахування ПДВ. Вартіcть послуг фіксованого телефонного зв&apos;язку вказана з урахуванням ПДВ. </Text>
+      <Text Type="DiffText">Диференційований рахунок</Text>
+      <Text Type="PhoneText">Відомість вартості отриманих послуг  за абонентським номером</Text>
+      <Text Type="CallCodes">S - текстове повідомлення (SMS) P - замовлення/отримання додаткових послуг G - послуга &apos;Прямий номер&apos; М - мультимедійне повідомлення (MMS) F - ередача/прийом факсів D - передача/прийом даних&apos;</Text>
+      <Text Type="CallType">1-вихідний  2 - вхідний 3-переадресований  4-виклик до абонента в роумінгу&apos;</Text>
+      <Text Type="CallDuration">тривалість з&apos;&apos;єднання у секундах&apos;</Text>
+      <Text Type="DetailedInfo">ДЕТАЛІЗОВАНА ІНФОРМАЦІЯ ПО РАХУНКУ №:</Text>
+    </InvoiceText>
+    <Summary Type="InvoiceSection">
+      <SummaryRow>
+        <RowDetail Header="Вартість, грн">
+          <Text>Замовлено та надано послуг рухомого (мобільного) зв&apos;язку за період</Text>
+          <AmountExclTax Header="Разом (без податків):">95.29</AmountExclTax>
+          <TaxAmount Type="VAT" Header="Податок на додану вартість (20% ПДВ)">19.06</TaxAmount>
+          <TaxAmount Type="PF" Header="Збір до Пенсійного фонду (7.5% ПФ)">7.15</TaxAmount>
+          <Amount Header="Разом (зі збором до Пенсійного фонду та з ПДВ):">121.50</Amount>
+          <Summary Type="BIGroup">
+            <SummaryRow>
+              <RowDetail>
+                <Text>Щомісячна абонентна плата</Text>
+                <Id>1</Id>
+                <AmountExclTax>95.29</AmountExclTax>
+                <Amount>121.50</Amount>
+              </RowDetail>
+            </SummaryRow>
+          </Summary>
+        </RowDetail>
+      </SummaryRow>
+    </Summary>
+    <InvoiceAmount>
+      <AmountDetail Type="Main" Header="Замовлено та надано послуг Mobile за перiод">
+        <BalBeginMonth Header="Станом на ">52.22</BalBeginMonth>
+        <BalBeginMonthText>залишок</BalBeginMonthText>
+        <BalEndMonth Header="Станом на ">130.72</BalEndMonth>
+        <BalBeginEndText>залишок</BalBeginEndText>
+        <TotalAmount Header="Разом замовлено та надано послуг за період на суму">121.50</TotalAmount>
+        <PaymentsTotalAmount Header="Надходження коштів  на особовий рахунок">200.00</PaymentsTotalAmount>
+        <RecommendedPayment Header="Сума рекомендованого авансового платежу">100.00</RecommendedPayment>
+        <TaxAmount Type="VAT" Header="Податок на додану вартість (20% ПДВ)">19.06</TaxAmount>
+        <TaxAmount Type="PF" Header="Збір до Пенсійного фонду (7.5% ПФ)">7.15</TaxAmount>
+        <Currency>UAH</Currency>
+        <Payments Header="Деталізація платежів за типами:">
+          <PaymentsInitial Header="Початковий платіж(дилерам), грн">0.00</PaymentsInitial>
+          <PaymentsBank Header="Платежі через банк, грн">200.00</PaymentsBank>
+          <PaymentsScratch Header="Скретч-картки та інші платежі, грн">0.00</PaymentsScratch>
+          <PaymentsOther Header="Переказ коштів та інші коригування, грн">0.00</PaymentsOther>
+          <PaymentsTotal Header="Разом, грн">200.00</PaymentsTotal>
+        </Payments>
+      </AmountDetail>
+    </InvoiceAmount>
+    <Contract>
+      <InvoiceID Header="Додаток до рахунку No ">200117330575</InvoiceID>
+      <ContractDetail>
+        <ContractID Header="Відомість вартості отриманих послуг за абонентським номером ">0673456789</ContractID>
+        <ContractType Header="" Name="VASH Simple">B2BVASHSIMPLE</ContractType>
+        <ContractName Header="Абонент:">
+          <FullName> Anonymous</FullName>
+        </ContractName>
+        <SubInvoiceAmount>
+          <AmountDetail Type="Sub">
+            <AmountExclTax Header="Разом:">121.50</AmountExclTax>
+            <TotalAmount Header="Разом замовлено та надано послуг за період на суму">121.50</TotalAmount>
+          </AmountDetail>
+        </SubInvoiceAmount>
+      </ContractDetail>
+    </Contract>
+  </Invoice>
+</InvoiceDocument>
+
+</Array-Bill>
