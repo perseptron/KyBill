@@ -108,8 +108,20 @@ def parse_xml(xml_file, tag_list: list, detailed: bool):
 
 
 def write_cells(ws, row: int, cols: list):
-    for cell, value in enumerate(cols):
-        ws.cell(row=row+1, column=cell+1, value=value[0].text)
+    row = ws.max_row+1
+    for cell, values in enumerate(cols):
+        for r, val in enumerate(values):
+            try:
+                ws.cell(row=row+r, column=cell+1, value=to_float_safe(val.text))
+            except AttributeError:
+                continue
+
+
+def to_float_safe(val):
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return val
 
 
 if __name__ == "__main__":
