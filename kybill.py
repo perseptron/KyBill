@@ -16,7 +16,7 @@ def main():
                       help="Filepath of source Invoice")
     args.add_argument("destination", nargs="?",
                       help="Filepath of destination report (default same as source but .xlsx)")
-    args.add_argument("--detailed", default=False, action=BooleanOptionalAction,
+    args.add_argument('-d', '--detailed', action='store_true',
                       help="Enabled detailed expense")
     args = args.parse_args()
 
