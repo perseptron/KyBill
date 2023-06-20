@@ -2,23 +2,16 @@ import string
 import logging
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from argparse import ArgumentParser, BooleanOptionalAction
-
 from openpyxl import Workbook
 from openpyxl.styles import Font
 
 
-def main():
-    logger = logging.getLogger(name=__name__)
+def process_file(src_xml, detailed, callback, dst_xls=""):
+    if dst_xls == "":
+        dst_xls = f"{Path(src_xml).parent}/{Path(src_xml).stem}.xlsx"
+        print(dst_xls)
 
-    args = ArgumentParser()
-    args.add_argument("source",
-                      help="Filepath of source Invoice")
-    args.add_argument("destination", nargs="?",
-                      help="Filepath of destination report (default same as source but .xlsx)")
-    args.add_argument('-d', '--detailed', action='store_true',
-                      help="Enabled detailed expense")
-    args = args.parse_args()
+    logger = logging.getLogger(name=__name__)
 
     _balance_start_val, _balance_start_sign = "Баланс поч.", "знак балансу"
     _balance_end_val, _balance_end_sign = "Баланс кін.", "знак балансу."
@@ -44,9 +37,6 @@ def main():
     vals = list(fields.values())
     _header_size = 1
 
-    src_xml = args.source
-    dst_xls = args.destination if args.destination else f"{Path(src_xml).stem}.xlsx"
-
     wb = Workbook()
     ws = wb.active
 
@@ -54,7 +44,7 @@ def main():
     hide_column(ws, keys.index(_balance_start_sign))
     hide_column(ws, keys.index(_balance_end_sign))
 
-    for row, cols in enumerate(parse_xml(src_xml, vals, args.detailed)):
+    for row, cols in enumerate(parse_xml(src_xml, vals, detailed)):
         if len(keys) != len(cols):
             logger.warning("Skipping Row %s: %s", row, cols)
             continue
@@ -68,9 +58,10 @@ def main():
             balance_sign=cols[keys.index(_balance_end_sign)]
         )
 
-        write_cells(ws, row=row+_header_size, cols=cols)
+        write_cells(ws, row=row + _header_size, cols=cols)
 
     wb.save(dst_xls)
+    callback()
 
 
 def transform_balance(balance, balance_sign):
@@ -80,7 +71,7 @@ def transform_balance(balance, balance_sign):
 
 def make_header(work_sheet, head_list: list):
     for i, col in enumerate(head_list):
-        cell = work_sheet.cell(row=1, column=i+1, value=col)
+        cell = work_sheet.cell(row=1, column=i + 1, value=col)
         # make title bold
         cell.font = Font(bold=True)
         # resize column
@@ -108,11 +99,11 @@ def parse_xml(xml_file, tag_list: list, detailed: bool):
 
 
 def write_cells(ws, row: int, cols: list):
-    row = ws.max_row+1
+    row = ws.max_row + 1
     for cell, values in enumerate(cols):
         for r, val in enumerate(values):
             try:
-                ws.cell(row=row+r, column=cell+1, value=to_float_safe(val.text))
+                ws.cell(row=row + r, column=cell + 1, value=to_float_safe(val.text))
             except AttributeError:
                 continue
 
@@ -124,5 +115,4 @@ def to_float_safe(val):
         return val
 
 
-if __name__ == "__main__":
-    main()
+
