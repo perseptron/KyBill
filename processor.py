@@ -9,7 +9,6 @@ from openpyxl.styles import Font
 def process_file(src_xml, detailed, callback, dst_xls=""):
     if dst_xls == "":
         dst_xls = f"{Path(src_xml).parent}/{Path(src_xml).stem}.xlsx"
-        print(dst_xls)
 
     logger = logging.getLogger(name=__name__)
 
@@ -113,6 +112,3 @@ def to_float_safe(val):
         return float(val)
     except (TypeError, ValueError):
         return val
-
-
-

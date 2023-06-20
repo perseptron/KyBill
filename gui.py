@@ -22,7 +22,7 @@ class GUI:
         self.detailed_cb = tk.Checkbutton(self.root, text="Detailed", variable=self.checkbox_var)
         self.detailed_cb.pack()
         # Create run button
-        self.run_button = tk.Button(self.root, text="Save", command=self.save_file)
+        self.run_button = tk.Button(self.root, text="Save", command=self.run)
         self.run_button.pack()
 
     def open_file_dialog(self):
@@ -35,8 +35,8 @@ class GUI:
     def handle_ready(self):
         self.file_path_label.config(text="Готово!")
 
-    def save_file(self):
-        processor.process_file(self.file_path, self.checkbox_var.get(), self.handle_ready)
+    def run(self):
+        processor.process_file(src_xml=self.file_path, detailed=self.checkbox_var.get(), callback=self.handle_ready())
 
 
 def show_gui():
@@ -45,6 +45,3 @@ def show_gui():
     gui = GUI(window)
     # Run the main event loop
     window.mainloop()
-
-
-
