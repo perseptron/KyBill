@@ -8,7 +8,7 @@ import processor
 def main():
     if len(sys.argv) <= 1:
         gui.show_gui()
-        exit(0)
+        sys.exit(0)
 
     args = ArgumentParser()
     args.add_argument("source", help="Filepath of source Invoice")
@@ -19,7 +19,6 @@ def main():
     source = args.source
     destination = args.destination if args.destination else ""
 
-    print(destination)
     detailed = args.detailed
     processor.process_file(src_xml=source, detailed=detailed, callback=handle_ready, dst_xls=destination)
 

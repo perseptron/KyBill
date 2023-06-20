@@ -36,7 +36,7 @@ class GUI:
         self.file_path_label.config(text="Готово!")
 
     def run(self):
-        processor.process_file(src_xml=self.file_path, detailed=self.checkbox_var.get(), callback=self.handle_ready())
+        processor.process_file(src_xml=self.file_path, detailed=self.checkbox_var.get(), callback=self.handle_ready)
 
 
 def show_gui():
