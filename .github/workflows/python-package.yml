@@ -47,3 +47,4 @@ jobs:
         server: 194.44.138.250
         username: mandrake
         password: ${{ secrets.FTP_MANDRAKE }}
+        server-dir: kybill/
